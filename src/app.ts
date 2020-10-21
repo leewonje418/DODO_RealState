@@ -9,5 +9,4 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/api", api);
-
-app.listen(5000, () => console.log('Server running'));
+export default app;
