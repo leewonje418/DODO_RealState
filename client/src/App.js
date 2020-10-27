@@ -44,7 +44,7 @@ const customer = [
     'birthday' : '962222',
     'gender' : '남자',
     'job' : '대학생'
-  },
+  }
 ]
 
 class App extends Component {
