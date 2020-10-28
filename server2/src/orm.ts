@@ -4,7 +4,7 @@ import {
     ConnectionOptions,
   } from 'typeorm';
   import logger from './lib/logger';
-  import databaseConfig from './config/ormconfig.json';
+  import databaseConfig from '../ormconfig';
   import entities from './entity';
   
   export const getConnection = async (): Promise<Connection> => {
