@@ -4,15 +4,16 @@ import TableCell from '@material-ui/core/TableCell'
 
 class Customer extends React.Component {
     render() {
-        const {id, image, name, birthday, gender, job} = this.props;
+        const {id, image, name, transaction_type, market_price, address, like} = this.props;
         return (
             <TableRow>
                 <TableCell>{id}</TableCell>
                 <TableCell><img src={image} alt="profile"/></TableCell>
                 <TableCell>{name}</TableCell>
-                <TableCell>{birthday}</TableCell>
-                <TableCell>{gender}</TableCell>
-                <TableCell>{job}</TableCell>
+                <TableCell>{transaction_type}</TableCell>
+                <TableCell>{market_price}</TableCell>
+                <TableCell>{address}</TableCell>
+                <TableCell>{like}</TableCell>
             </TableRow>
         )
     }

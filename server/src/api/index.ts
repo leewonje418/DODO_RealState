@@ -1,6 +1,6 @@
 import { Router } from "express";
-import customers from "./customers.ctrl/customers";
+import sales from "./sales.ctrl/sales";
 const router = Router();
 
-router.get('/customers', customers);
+router.get('/sales', sales);
 export default router;
