@@ -3,12 +3,9 @@
    "version": "1.0.0",
    "main": "index.ts",
    "scripts": {
-      "start": "ts-node src/index.ts"
+      "start": "ts-node src/server.ts"
    },
-   "repository": {
-      "type": "git",
-      "url": "git+https://github.com/leewonje418/TypescriptAndNode_Practice.git"
-   },
+   "repository": "git+https://github.com/leewonje418/TypescriptAndNode_Practice.git",
    "author": "이원제 <50200484+leewonje418@users.noreply.github.com>",
    "license": "ISC",
    "bugs": {
@@ -20,9 +17,9 @@
       "@babel/core": "^7.12.3",
       "@babel/node": "^7.12.1",
       "@babel/preset-env": "^7.12.1",
+      "@types/node": "^8.0.29",
       "ts-node": "3.3.0",
-      "typescript": "3.3.3333",
-      "@types/node": "^8.0.29"
+      "typescript": "3.3.3333"
    },
    "dependencies": {
       "@std/esm": "^0.26.0",
