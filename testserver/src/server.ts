@@ -1,8 +1,8 @@
-import * as http from 'http';
+import http from 'http';
 import app from './app';
 // import * as database from './database';
-import * as path from 'path'
-import * as dotenv from 'dotenv'
+import path from 'path'
+import dotenv from 'dotenv'
 
 dotenv.config({ path: path.join(__dirname, '../.env') })
 
