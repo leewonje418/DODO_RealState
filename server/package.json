@@ -33,6 +33,7 @@
       "express": "^4.17.1",
       "http": "0.0.1-security",
       "mysql": "^2.18.1",
+      "mysql2": "^2.2.5",
       "nodemon": "^2.0.5",
       "reflect-metadata": "^0.1.10",
       "typeorm": "0.2.28",
