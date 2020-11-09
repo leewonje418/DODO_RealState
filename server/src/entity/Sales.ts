@@ -1,8 +1,8 @@
-import {Entity, Column, PrimaryGeneratedColumn, ManyToMany, JoinTable} from "typeorm";
+import {Entity, Column, PrimaryGeneratedColumn, ManyToMany, JoinTable, BaseEntity} from "typeorm";
 import {User} from "./User";
 
 @Entity('sales')
-export class Sales {
+export default class Sales extends BaseEntity{
     @PrimaryGeneratedColumn()
     idx: number;
 
