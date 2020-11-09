@@ -1,5 +1,5 @@
 import {User} from './User';
-import {Sales} from './Sales';
+import Sales from './Sales';
 
 const entities = [
   User,
