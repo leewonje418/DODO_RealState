@@ -3,6 +3,6 @@ import getSales from './sales.ctrl/getSales'
 
 const router = Router();
 
-router.post('/');
+router.post('/getsales', getSales);
 
 export default router;
