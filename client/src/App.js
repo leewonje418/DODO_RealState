@@ -36,7 +36,7 @@ class App extends Component {
       .catch(err => console.log(err));
   }
   callApi = async () => {
-    const response = await fetch('api/sales');
+    const response = await fetch('api/v1/sales/getsales');
     const body = await response.json();
     return body;
   }
