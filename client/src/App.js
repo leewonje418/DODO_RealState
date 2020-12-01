@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Customer from './components/Customer'
+import CustomerAdd from './components/CustomerAdd'
 import './App.css';
 import Table from '@material-ui/core/Table';
 import TableHead from '@material-ui/core/TableHead';
@@ -50,44 +51,47 @@ class App extends Component {
     const { classes } = this.props
     const { root, table } = classes;
     return (
-      <Paper className={root}>
-        <Table className={table}> 
-          <TableHead>
-            <TableRow>
-              <TableCell>번호</TableCell>
-              <TableCell>이미지</TableCell>
-              <TableCell>매물명</TableCell>
-              <TableCell>거래형태</TableCell>
-              <TableCell>시세</TableCell>
-              <TableCell>주소</TableCell>
-              <TableCell>좋아요</TableCell> 
-            </TableRow>
-          </TableHead>
-          <TableBody>{
-            this.state.customers ? this.state.customers.map(c => {
-              const {id, image, name, transaction_type, market_price, address, like} = c;
-              return (
-                <Customer
-                  key={id}
-                  id={id}
-                  image={image}
-                  name={name}
-                  transaction_type={transaction_type}
-                  market_price={market_price}
-                  address={address}
-                  like={like}
-                />
-              ); 
-            }) : 
-            <TableRow>
-              <TableCell colSpan="7" align="center ">
-                <CircularProgress className={classes.progress} varieant="determinate" value={this.state.completed}/>
-              </TableCell>
-            </TableRow>
-            }
-          </TableBody>
-        </Table>
-      </Paper>
+      <div>
+        <Paper className={root}>
+          <Table className={table}> 
+            <TableHead>
+              <TableRow>
+                <TableCell>번호</TableCell>
+                <TableCell>이미지</TableCell>
+                <TableCell>매물명</TableCell>
+                <TableCell>거래형태</TableCell>
+                <TableCell>시세</TableCell>
+                <TableCell>주소</TableCell>
+                <TableCell>좋아요</TableCell> 
+              </TableRow>
+            </TableHead>
+            <TableBody>{
+              this.state.customers ? this.state.customers.map(c => {
+                const {id, image, name, transaction_type, market_price, address, like} = c;
+                return (
+                  <Customer
+                    key={id}
+                    id={id}
+                    image={image}
+                    name={name}
+                    transaction_type={transaction_type}
+                    market_price={market_price}
+                    address={address}
+                    like={like}
+                  />
+                ); 
+              }) : 
+              <TableRow>
+                <TableCell colSpan="7" align="center ">
+                  <CircularProgress className={classes.progress} varieant="determinate" value={this.state.completed}/>
+                </TableCell>
+              </TableRow>
+              }
+            </TableBody>
+          </Table>
+        </Paper>
+        <CustomerAdd/>
+      </div>
     )}
   }
 
