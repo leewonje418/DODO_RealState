@@ -26,10 +26,24 @@ const styles = theme => ({
 });
 
 class App extends Component {
-  state = {
-    customers: "",
-    completed: 0
+  constructor(props) {
+    super(props);
+    this.state = {
+      customers: "",
+      completed: 0
+    }
   }
+
+  stateRefresh = () => {
+    this.setState({
+      customers: '',
+      completed: 0
+    });
+    this.callApi()
+      .then(res => this.setState({customers: res}))
+      .catch(err => console.log(err));
+  }
+
   componentDidMount() {
     this.timer = setInterval(this.progress, 20);
     this.callApi()
@@ -63,6 +77,7 @@ class App extends Component {
                 <TableCell>시세</TableCell>
                 <TableCell>주소</TableCell>
                 <TableCell>좋아요</TableCell> 
+                <TableCell>설정</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>{
@@ -70,6 +85,7 @@ class App extends Component {
                 const {id, image, name, transaction_type, market_price, address, like} = c;
                 return (
                   <Customer
+                    stateRefresh={this.stateRefresh}
                     key={id}
                     id={id}
                     image={image}
@@ -90,7 +106,7 @@ class App extends Component {
             </TableBody>
           </Table>
         </Paper>
-        <CustomerAdd/>
+        <CustomerAdd stateRefresh={this.stateRefresh}/>
       </div>
     )}
   }
