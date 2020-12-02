@@ -6,8 +6,11 @@ export default async (req: Request, res: Response) => {
     try {
         const salesRepo = getRepository(Sales);
         const sales: Sales[] = await salesRepo.find({
+            where: {
+                isDeleted: false
+            },
             order: {
-                idx: 'DESC'
+                id: 'DESC'
             }
         });
         res.send(sales);
