@@ -4,7 +4,7 @@ import {User} from "./User";
 @Entity('sales')
 export default class Sales extends BaseEntity{
     @PrimaryGeneratedColumn()
-    idx: number;
+    id: number;
 
     @Column({
         length: 255,
@@ -41,6 +41,12 @@ export default class Sales extends BaseEntity{
         nullable: false,
     })
     address: String;
+
+    @Column({
+        nullable: false,
+        default: false
+    })
+    isDeleted: boolean;
 
     @ManyToMany(() => User)
     @JoinTable()

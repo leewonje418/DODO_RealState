@@ -3,13 +3,13 @@ import {Entity, PrimaryColumn, Column, PrimaryGeneratedColumn} from "typeorm";
 @Entity('user')
 export class User {
     @PrimaryGeneratedColumn()
-    idx: number;
+    id: number;
 
     @PrimaryColumn({
         length: 255,
         nullable: false,
     })
-    id: String;
+    account: String;
 
     @Column({
         length: 255,
