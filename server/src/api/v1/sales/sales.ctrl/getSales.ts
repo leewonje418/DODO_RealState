@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import { getRepository } from 'typeorm';
 import Sales from '../../../../entity/Sales'
+import logger from '../../../../lib/logger';
 export default async (req: Request, res: Response) => {
     try {
         const salesRepo = getRepository(Sales);
@@ -9,9 +10,8 @@ export default async (req: Request, res: Response) => {
                 idx: 'DESC'
             }
         });
-        console.log(sales);
         res.send(sales);
     } catch (error) {
-        console.error(error);
+        logger.red('server error!', error);
     }
 }
