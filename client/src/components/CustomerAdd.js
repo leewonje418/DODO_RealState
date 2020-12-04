@@ -32,11 +32,11 @@ class CustomerAdd extends React.Component {
 
     handleFormSubmit = (e) => {
         e.preventDefault()
-        this.addCustomer();
-            // .then((response) => {
-            //     console.log(response);
-            //     this.props.stateRefresh();
-            // })
+        this.addCustomer()
+            .then((response) => {
+                console.log(response);
+                this.props.stateRefresh();
+            })
         this.setState({
             file: null,
             name: '',
@@ -44,7 +44,8 @@ class CustomerAdd extends React.Component {
             market_price: '',
             area: '',
             address: '',
-            like: ''
+            like: '',
+            open: false
         })
     }
  
@@ -88,7 +89,7 @@ class CustomerAdd extends React.Component {
                 console.log(response);
                 if (response.status === 200) {
                     alert('추가 성공.');
-                    window.location.reload();
+                    // window.location.reload();
                 }
             });
             // return post(url, formData, config);
