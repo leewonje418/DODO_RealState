@@ -12,7 +12,7 @@ export default async (req: Request, res: Response) => {
             }
         })
         sales.isDeleted = true;
-        console.log(sales);
+        // console.log(sales);
         await salesRepo.save(sales);
         res.send(sales);
     } catch (error) {

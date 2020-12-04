@@ -82,7 +82,7 @@ class App extends Component {
             </TableHead>
             <TableBody>{
               this.state.customers ? this.state.customers.map(c => {
-                const {id, image, name, transaction_type, market_price, address, like} = c;
+                const {id, image, name, transaction_type, market_price, address, like, file} = c;
                 return (
                   <Customer
                     stateRefresh={this.stateRefresh}

@@ -15,30 +15,35 @@ export default class Sales extends BaseEntity{
     @Column({
         length: 255,
         nullable: false,
+        default: '',
     })
     name: String;
 
     @Column({
         length: 255,
         nullable: false,
+        default: '',
     })
     transaction_type: String;
 
     @Column({
         length: 255,
         nullable: false,
+        default: '',
     })
     market_price: String;
     
     @Column({
         length: 255,
         nullable: false,
+        default: '',
     })
     area: String;
 
     @Column({
         length: 255,
         nullable: false,
+        default: '',
     })
     address: String;
 
